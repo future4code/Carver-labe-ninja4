@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 export function Filtro(props) {
     return (
         <div>
@@ -25,9 +23,6 @@ export function Filtro(props) {
             />
             <h2>{props.listService}</h2>
         </div>
-
-
-
 
     );
 }

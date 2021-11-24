@@ -1,59 +1,71 @@
 import React from 'react'
-//import { AppContainer } from './components/AppContainer';
-import {Filtro} from './components/Filtros';
+import TelaDeBusca from './components/TelaDeBusca'
+import TelaDeCadastro from './components/TelaDeCadastro'
+import TelaDeDetalhes from './components/TelaDeDetalhes'
+import Carrinho from './components/Carrinho'
+import Home from './components/Home'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default class App extends React.Component {
 	state = {
-		valueMin: "",
-		valueMax: "",
-		search:"",
+		currentScreen: "home"
 	}
 
-	updateSearch = (e) => {
-		this.setState({search: e.target.value,});
-	}
-	updateValueMin = (e) => {
-		if (e.target.value < 0) {
-			this.setState({valueMin: "",});
-		  } else {
-			this.setState({valueMin: e.target.value,});
-		  }
-	}
-	updateValueMax = (e) => {
-		if (e.target.value < 0) {
-			this.setState({valueMax: "",});
-		  } else {
-			this.setState({valueMax: e.target.value,});
-		  }
-	}
-
-	render(){
-		let filterServices = []
-		const filtrosCriterios = this.state.listService
-		.filter(service => {
-			return service.name.toLowerCase().includes(this.state.search.toLowerCase());
-		})
-		.filter(service => {
-			return this.state.valueMin === "" || service.value >= this.state.valueMin;
-		})
-		.filter(service => {
-			return this.state.valueMax === "" || service.value <= this.state.valueMax;
-		})
-		.map(service => {
-			return filterServices.push(service);
-		})
-
-		return(
-			<Filtro 
-			valueMin={this.state.valueMin}
-			valueMax={this.state.valueMax}
-			search={this.state.search}
-			updateSearch={this.updateSearch}
-			updateValueMin={this.updateValueMin}
-			updateValueMax={this.updateValueMax}
-			/>
-	)
+	trocarPagina = () => {
+		switch(this.state.currentScreen) {
+			case "home":
+				return <Home irParaHome={this.irParaHome}/>
+			case "cadastro":
+				return <TelaDeCadastro irParaCadastro={this.irParaCadastro}/>
+			case "busca":
+				return <TelaDeBusca irParaBusca={this.irParaBusca}/>
+			case "carrinho":
+				return <Carrinho irParaCarrinho={this.irParaCarrinho}/>
+			case "detalhes":
+				return <TelaDeDetalhes irParaDetalhes={this.irParaDetalhes}/>
+			default:
+				return <div>Página não encontrada</div>
+		}
 	}
 
+	irParaCadastro = () => {
+		this.setState({
+			currentScreen: "cadastro"
+		})
+	}
+
+	irParaBusca = () => {
+		this.setState({
+			currentScreen: "busca"
+		})
+	}
+
+	irParaHome = () => {
+		this.setState({
+			currentScreen: "home"
+		})
+	}
+
+	irParaCarrinho = () => {
+		this.setState({
+			currentScreen: "carrinho"
+		})
+	}
+
+	irParaDetalhes = () => {
+		this.setState({
+			currentScreen: "detalhes"
+		})
+	}
+
+	render () {
+		return (
+			<div>
+				<Header/>
+					{this.trocarPagina()}
+				<Footer/>
+			</div>
+		)
+	}	
 }
-
