@@ -1,10 +1,24 @@
-import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import React, { Component } from 'react'
+import Cadastro from './components/TelaCadastro'
+import styled from 'styled-components'
 
-function App() {
-	return (
-        <AppContainer />
-	)
-}
+const ContainerCadastro= styled.div`
+display:flex;
+border: 1px solid black;
+heigth: 100px;
+width:600px;
+margin: auto;
+paddind:20px;
+`
 
-export default App
+export default class App extends Component{
+	
+	render(){
+
+		return( <ContainerCadastro>
+			<Cadastro/>
+		</ContainerCadastro>
+	
+		)};
+	
+};
