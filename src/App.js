@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from 'react'
 import TelaDeBusca from './components/TelaDeBusca'
 import TelaDeCadastro from './components/TelaDeCadastro'
@@ -43,6 +41,7 @@ export default class App extends React.Component {
 		})
 	}
 
+
 	irParaHome = () => {
 		this.setState({
 			currentScreen: "home"
@@ -70,5 +69,3 @@ export default class App extends React.Component {
 			</div>
 		)
 	}	
-}
->>>>>>> augusto-filtros
