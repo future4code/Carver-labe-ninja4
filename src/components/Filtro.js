@@ -25,4 +25,3 @@ export function Filtro(props) {
         </div>
 
     );
-}

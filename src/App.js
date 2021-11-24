@@ -41,7 +41,8 @@ export default class App extends React.Component {
 		})
 	}
 
-    irParaHome = () => {
+
+	irParaHome = () => {
 		this.setState({
 			currentScreen: "home"
 		})
@@ -68,4 +69,3 @@ export default class App extends React.Component {
 			</div>
 		)
 	}	
-}
