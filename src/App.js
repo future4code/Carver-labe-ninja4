@@ -1,15 +1,8 @@
 import React from 'react'
-
-
-
-// import TelaDeBusca from './components/TelaDeBusca'
-// import TelaDeCadastro from './components/TelaDeCadastro'
-// import TelaDeDetalhes from './components/TelaDeDetalhes'
-// import Carrinho from './components/Carrinho'
-import Home from './components/Home';
-import Header from './components/Header';
-import TelaDeBusca from './components/TelaDeBusca';
-// import Footer from './components/Footer';
+import Home from './components/Home/Home';
+import TelaDeBusca from './components/TelaDeBusca/TelaDeBusca';
+import TelaDeCadastro from './components/TelaDeCadastro/TelaDeCadastro'
+import Header from './components/Header/Header';
 
 export default class App extends React.Component {
 	state = {
@@ -43,7 +36,7 @@ export default class App extends React.Component {
     mudarParaBusca = () => {
         this.setState ({telaAtual: "busca"})
     }
->
+
 
 	render () {
 		return (
