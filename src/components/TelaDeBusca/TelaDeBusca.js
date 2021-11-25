@@ -40,13 +40,15 @@ export default class TelaDeBusca extends React.Component {
                     Authorization: "13dfeab9-2ccf-4951-9acd-0d66de76427d"
                 }
             }
-        ).then((response) =>
+        ).then((response) =>{
+            console.log(response)
+            
             this.setState({
                 listaDeServicos: response.data.jobs
             })
-        ).catch((error) =>
+        }).catch((error) =>{
             console.log(error.response)
-        )
+        })
     }
     
     render() {

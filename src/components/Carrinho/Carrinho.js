@@ -1,21 +1,23 @@
-import React from 'react'
+ import React, {Component} from 'react'
+import Itens from './Itens/Intens'
+ import { EstiloCarrinho } from './StyledCar'
 
-export default class Carrinho extends React.Component{
 
-    render () {
-        return (
+export default class Carrinho extends Component{
+
+    render(){
+        return <EstiloCarrinho>
+            <h2>Carrinho</h2>
             <div>
-                <div>
-                    <button onClick={this.props.irParaHome}>Home</button>
-                    <button onClick={this.props.irParaCadastro}>Cadastro</button>
-                    <button onClick={this.props.irParaBusca}>Busca</button>
-                    <button onClick={this.props.irParaCarrinho}>Carrinho</button>
-                    <button onClick={this.props.irParaDetalhes}>Detalhes</button>
-                </div>
-                Carrinho
+                <Itens
+                title={'Produto'}
+                price={'R$:10,00'}
+                remove={()=>console.log('removeu')}
+                />
             </div>
-        )
+            <p>Valor Total: R$00,00</p>
+            <button>Finalizar Compra</button>
+            </EstiloCarrinho>
+    };
 
-    }
-
-}
+};

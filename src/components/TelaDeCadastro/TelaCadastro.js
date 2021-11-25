@@ -1,12 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react'
-import styled from 'styled-components';
-
-const Inputs= styled.div`
-border: 2px solid #7867bf 
-display:flex;
-
-`
+import {Inputs} from './StyledCadastro'
 
 export default class Cadastro extends Component {
   
@@ -44,7 +38,7 @@ fazerCadastro=()=>{
     
       title: this.state.title,
       description: this.state.description,
-      price: this.state.price,
+      price: Number (this.state.price),
       paymentMethods :this.state.paymentMethods,
       dueDate: this.state.dueDate
   }
@@ -86,7 +80,8 @@ fazerCadastro=()=>{
                 </select>
     <input placeholder={'Prazo'}
     value={this.state.dueDate}
-    onChange={this.handleDueDate}/>
+    onChange={this.handleDueDate}
+    type='date'/>
     <button onClick={this.fazerCadastro}>Cadastrar</button>
     </Inputs>
      
