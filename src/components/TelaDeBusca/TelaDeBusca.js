@@ -27,7 +27,7 @@ const CardProduto = styled.div`
 export default class TelaDeBusca extends React.Component {
    
 
-<
+
     pegarTodosServicos = () => {
         axios.get(
             `${BASE_URL}/jobs`, {
