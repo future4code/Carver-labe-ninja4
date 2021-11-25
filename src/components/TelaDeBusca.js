@@ -1,12 +1,33 @@
-<<<<<<< HEAD
 import React from "react";
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
+import { Filtro } from "./Filtro";
 
 export default class TelaDeBusca extends React.Component {
     state = {
-        listaDeServicos: []
+        listaDeServicos: [],
+        valueMin: "",
+		valueMax: "",
+		search:""
     }
+
+    updateSearch = (e) => {
+		this.setState({search: e.target.value,});
+	}
+	updateValueMin = (e) => {
+		if (e.target.value < 0) {
+			this.setState({valueMin: "",});
+		  } else {
+			this.setState({valueMin: e.target.value,});
+		  }
+	}
+	updateValueMax = (e) => {
+		if (e.target.value < 0) {
+			this.setState({valueMax: "",});
+		  } else {
+			this.setState({valueMax: e.target.value,});
+		  }
+	}
 
     componentDidMount(){
         this.pegarTodosServicos()
@@ -29,6 +50,20 @@ export default class TelaDeBusca extends React.Component {
     }
     
     render() {
+        let filterServices = []
+		const filtrosCriterios = this.state.listService
+		.filter(service => {
+			return service.name.toLowerCase().includes(this.state.search.toLowerCase());
+		})
+		.filter(service => {
+			return this.state.valueMin === "" || service.value >= this.state.valueMin;
+		})
+		.filter(service => {
+			return this.state.valueMax === "" || service.value <= this.state.valueMax;
+		})
+		.map(service => {
+			return filterServices.push(service);
+		})
         console.log(this.state.listaDeServicos)
         const jobsList = this.state.listaDeServicos.map((oferta) => {
             return <p key={oferta.id}>
@@ -52,50 +87,12 @@ export default class TelaDeBusca extends React.Component {
             <div>{jobsList}</div>
         )
     }
-=======
-import React from 'react'
-import { Filtro } from './Filtro';
 
-export default class TelaDeBusca extends React.Component{
-    state = {
-		valueMin: "",
-		valueMax: "",
-		search:"",
-	}
 
-    updateSearch = (e) => {
-		this.setState({search: e.target.value,});
-	}
-	updateValueMin = (e) => {
-		if (e.target.value < 0) {
-			this.setState({valueMin: "",});
-		  } else {
-			this.setState({valueMin: e.target.value,});
-		  }
-	}
-	updateValueMax = (e) => {
-		if (e.target.value < 0) {
-			this.setState({valueMax: "",});
-		  } else {
-			this.setState({valueMax: e.target.value,});
-		  }
-	}
+    
 
     render () {
-        let filterServices = []
-		const filtrosCriterios = this.state.listService
-		.filter(service => {
-			return service.name.toLowerCase().includes(this.state.search.toLowerCase());
-		})
-		.filter(service => {
-			return this.state.valueMin === "" || service.value >= this.state.valueMin;
-		})
-		.filter(service => {
-			return this.state.valueMax === "" || service.value <= this.state.valueMax;
-		})
-		.map(service => {
-			return filterServices.push(service);
-		})
+        
         return (
             <div>
                 <div>
@@ -116,5 +113,4 @@ export default class TelaDeBusca extends React.Component{
 
             </div>         
         )}
->>>>>>> augusto-filtros
 }

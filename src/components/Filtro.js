@@ -24,4 +24,5 @@ export function Filtro(props) {
             <h2>{props.listService}</h2>
         </div>
 
-    );
+    )
+}
