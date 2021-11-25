@@ -40,7 +40,8 @@ export default class App extends React.Component {
     mudarParaBusca = () => {
         this.setState ({telaAtual: "busca"})
     }
-	render() {
+
+	render () {
 		return (
 			<div>
 				<Header />
