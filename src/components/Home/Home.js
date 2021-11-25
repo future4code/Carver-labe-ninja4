@@ -1,19 +1,23 @@
-import React from 'react'
+import React from 'react';
+import TelaDeCadastro from './TelaDeCadastro';
+// import axios from 'axios';
 
-export default class Home extends React.Component{
+export default class Home extends React.Component {
+    
 
-    render () {
+    render() {
         return (
-            <div>
-                <div>
-                    <button onClick={this.props.irParaHome}>Home</button>
-                    <button onClick={this.props.irParaCadastro}>Cadastro</button>
-                    <button onClick={this.props.irParaBusca}>Busca</button>
-                    <button onClick={this.props.irParaCarrinho}>Carrinho</button>
-                    <button onClick={this.props.irParaDetalhes}>Detalhes</button>
-                </div>
-               Home 
-            </div>
+    <div>
+					<div>
+						<p>Seja um filiado.</p>
+						<button onClick={this.props.mudarParaCadastro}>Cadastre seu serviço aqui.</button>
+					</div>
+					<div>
+						<p>Clique aqui para</p>
+						<button onClick={this.props.mudarParaBusca}>Busque por um serviço.</button>
+					</div>
+				</div>
+            
         )
 
     }
