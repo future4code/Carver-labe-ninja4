@@ -15,9 +15,7 @@ padding: 50px;
 
 
 export default class Home extends React.Component {
-
-
-	render() {
+render() {
 		return (
 
 			<ContainerHome>

@@ -6,7 +6,6 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 
-
 export default class App extends React.Component {
 	state = {
         telaAtual: "home"
@@ -42,6 +41,7 @@ export default class App extends React.Component {
     mudarParaBusca = () => {
         this.setState ({telaAtual: "busca"})
     }
+
 
 
 
