@@ -1,6 +1,6 @@
 import React from 'react'
 import TelaDeBusca from './components/TelaDeBusca'
-import TelaDeCadastro from './components/TelaDeCadastro'
+import TelaCadastro from './components/TelaCadastro'
 import TelaDeDetalhes from './components/TelaDeDetalhes'
 import Carrinho from './components/Carrinho'
 import Home from './components/Home'
@@ -17,7 +17,7 @@ export default class App extends React.Component {
 			case "home":
 				return <Home irParaHome={this.irParaHome}/>
 			case "cadastro":
-				return <TelaDeCadastro irParaCadastro={this.irParaCadastro}/>
+				return <TelaCadastro irParaCadastro={this.irParaCadastro}/>
 			case "busca":
 				return <TelaDeBusca irParaBusca={this.irParaBusca}/>
 			case "carrinho":
