@@ -23,8 +23,6 @@ export default class App extends React.Component {
 				return <TelaDeBusca irParaBusca={this.irParaBusca}/>
 			case "carrinho":
 				return <Carrinho irParaCarrinho={this.irParaCarrinho}/>
-			case "detalhes":
-				return <TelaDeDetalhes irParaDetalhes={this.irParaDetalhes}/>
 			default:
 				return <div>Página não encontrada</div>
 		}
@@ -52,12 +50,6 @@ export default class App extends React.Component {
 	irParaCarrinho = () => {
 		this.setState({
 			currentScreen: "carrinho"
-		})
-	}
-
-	irParaDetalhes = () => {
-		this.setState({
-			currentScreen: "detalhes"
 		})
 	}
 
