@@ -7,6 +7,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
+
     <div>
 					<div>
 						<p>Seja um filiado.</p>
@@ -17,7 +18,7 @@ export default class Home extends React.Component {
 						<button onClick={this.props.mudarParaBusca}>Busque por um serviço.</button>
 					</div>
 				</div>
-            
+
         )
 
     }

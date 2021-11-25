@@ -1,4 +1,8 @@
 import React from 'react'
+
+
+
+
 // import TelaDeBusca from './components/TelaDeBusca'
 // import TelaDeCadastro from './components/TelaDeCadastro'
 // import TelaDeDetalhes from './components/TelaDeDetalhes'
@@ -40,13 +44,16 @@ export default class App extends React.Component {
     mudarParaBusca = () => {
         this.setState ({telaAtual: "busca"})
     }
+>
 
 	render () {
 		return (
 			<div>
+
 				<Header />
 				<p>O talento certo, no momento certo.</p>
 				<Home mudarParaCadastro={this.mudarParaCadastro} mudarParaBusca={this.mudarParaBusca}/>
+
 			</div>
 		)
 	}
