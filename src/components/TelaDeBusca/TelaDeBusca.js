@@ -27,9 +27,26 @@ const CardProduto = styled.div`
 export default class TelaDeBusca extends React.Component {
    
 
-        
+<
+    pegarTodosServicos = () => {
+        axios.get(
+            `${BASE_URL}/jobs`, {
+                headers: {
+                    Authorization: "13dfeab9-2ccf-4951-9acd-0d66de76427d"
+                }
+            }
+        ).then((response) =>{
+            console.log(response)
+            
+            this.setState({
+                listaDeServicos: response.data.jobs
+            })
+        }).catch((error) =>{
+            console.log(error.response)
+        })
+    }
+    
 
- 
     render() {
 
 

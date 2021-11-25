@@ -2,7 +2,6 @@ import React from 'react'
 
 
 
-
 // import TelaDeBusca from './components/TelaDeBusca'
 // import TelaDeCadastro from './components/TelaDeCadastro'
 // import TelaDeDetalhes from './components/TelaDeDetalhes'
@@ -58,3 +57,4 @@ export default class App extends React.Component {
 		)
 	}
 }
+
