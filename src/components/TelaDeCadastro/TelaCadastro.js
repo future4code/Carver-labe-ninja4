@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const Inputs= styled.div`
-border: 2px solid #7867bf 
-display:flex;
-
+border: 2px solid #7867bf; 
+display: flex;
 `
 
 export default class Cadastro extends Component {
