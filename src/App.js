@@ -1,7 +1,6 @@
 import React from 'react'
 import TelaDeBusca from './components/TelaDeBusca'
 import TelaCadastro from './components/TelaCadastro'
-import TelaDeDetalhes from './components/TelaDeDetalhes'
 import Carrinho from './components/Carrinho'
 import Home from './components/Home'
 import Header from './components/Header'
@@ -22,8 +21,6 @@ export default class App extends React.Component {
 				return <TelaDeBusca irParaBusca={this.irParaBusca}/>
 			case "carrinho":
 				return <Carrinho irParaCarrinho={this.irParaCarrinho}/>
-			case "detalhes":
-				return <TelaDeDetalhes irParaDetalhes={this.irParaDetalhes}/>
 			default:
 				return <div>Página não encontrada</div>
 		}
@@ -51,12 +48,6 @@ export default class App extends React.Component {
 	irParaCarrinho = () => {
 		this.setState({
 			currentScreen: "carrinho"
-		})
-	}
-
-	irParaDetalhes = () => {
-		this.setState({
-			currentScreen: "detalhes"
 		})
 	}
 
