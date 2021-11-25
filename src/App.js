@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 
+
 export default class App extends React.Component {
 	state = {
         telaAtual: "home"
@@ -46,7 +47,9 @@ export default class App extends React.Component {
 
 	render () {
 		return (
+            
 			<div>
+               
               <Header />
 				<p>O talento certo, no momento certo.</p>
 				<Home mudarParaCadastro={this.mudarParaCadastro} mudarParaBusca={this.mudarParaBusca}/>
