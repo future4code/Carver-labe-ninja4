@@ -1,5 +1,5 @@
 import React from 'react';
-import TelaDeCadastro from './TelaDeCadastro';
+import TelaDeCadastro from '../TelaDeCadastro/TelaCadastro';
 // import axios from 'axios';
 
 export default class Home extends React.Component {

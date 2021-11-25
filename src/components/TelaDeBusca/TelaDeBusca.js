@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { BASE_URL } from "../constants/urls";
-import { Filtro } from "./Filtro";
+//import { BASE_URL } from "../constants/urls/";
+//import { Filtro } from "./Filtro";
 
 export default class TelaDeBusca extends React.Component {
     render () {
@@ -13,10 +13,10 @@ export default class TelaDeBusca extends React.Component {
     }
 }
 //     state = {
-//         listaDeServicos: [],
+//          listaDeServicos: [],
 //         valueMin: "",
-// 		valueMax: "",
-// 		search:""
+// 		    valueMax: "",
+// 		    search:""
 //     }
 
 //     updateSearch = (e) => {

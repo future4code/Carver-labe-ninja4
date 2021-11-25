@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import axios from 'axios';
-import logo1 from './img/logo1.png'
+import logo1 from '../img/logo1.png'
 
 
 const ContainerHeader = styled.div`
