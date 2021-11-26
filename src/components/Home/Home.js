@@ -23,11 +23,11 @@ export default class Home extends React.Component {
 			<ContainerHome>
 				<CardHome>
 					<p>Seja um filiado.</p>
-					<button onClick={this.props.mudarParaCadastro}>Cadastre seu serviço aqui.</button>
+					<button onClick={() =>this.props.mudarPagina("cadastro")}>Cadastre seu serviço aqui.</button>
 				</CardHome>
 				<CardHome>
 					<p>O que você precisa?</p>
-					<button onClick={this.props.mudarParaBusca}>Busque por um serviço.</button>
+					<button onClick={() =>this.props.mudarPagina("busca")}>Busque por um serviço.</button>
 				</CardHome>
 			</ContainerHome>
 

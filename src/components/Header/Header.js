@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo1 from './img/logo1.png'
-
+import {Routes, Route, Link} from 'react-router-dom';
+import Home from '../Home/Home';
+import Carrinho from '../Carrinho/Carrinho';
 
 const ContainerHeader = styled.div`
 background-color: #DBDB00;
@@ -32,9 +34,10 @@ export default class Header extends Component {
             <ContainerHeader>
                 <ImgHeader src={logo1} />
                 <div>
-                    <ButtonHeader>Página Inicial</ButtonHeader>
-                    <ButtonHeader>Carrinho</ButtonHeader>
+                    <ButtonHeader onClick={() =>this.props.mudarPagina("home")}>Página Inicial</ButtonHeader>
+                    <ButtonHeader onClick={() =>this.props.mudarPagina("carrinho")}>Carrinho</ButtonHeader>
                 </div>
+                
 
             </ContainerHeader>
         )
