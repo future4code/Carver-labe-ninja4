@@ -45,6 +45,7 @@ export default class TelaDeBusca extends React.Component {
                 console.log(err)
             })
     }
+    
 
 
     render() {
@@ -65,10 +66,12 @@ export default class TelaDeBusca extends React.Component {
         return (
             <AreaPrincipal>
                 <AreaGrid>
+                
                     <Filtro
                         valueMin={this.state.valueMin}
                         valueMax={this.state.valueMax}
-                        search={this.state.search}
+                        search={this.state.query}
+                        onChange={this.updateQuery}
                         updateSearch={this.updateSearch}
                         updateValueMin={this.updateValueMin}
                         updateValueMax={this.updateValueMax}
