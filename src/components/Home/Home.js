@@ -1,15 +1,13 @@
 import React from 'react';
+// import axios from 'axios';
 import styled from 'styled-components';
 import './Home.css';
 
 
 
 
-
 export default class Home extends React.Component {
-
-
-	render() {
+render() {
 		return (
 
 			<div className="ContainerHome">
