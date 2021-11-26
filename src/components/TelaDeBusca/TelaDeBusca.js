@@ -11,12 +11,7 @@ const AreaPrincipal = styled.div`
     margin: 10px;
 `
 
-//     state = {
-//          listaDeServicos: [],
-//         valueMin: "",
-// 		    valueMax: "",
-// 		    search:""
-//     }
+  
 
 const AreaGrid = styled.div`
     display: flex;
@@ -33,7 +28,12 @@ const CardProduto = styled.div`
 
 export default class TelaDeBusca extends React.Component {
    
-
+    state = {
+        listaDeServicos: [],
+       valueMin: "",
+           valueMax: "",
+           search:""
+   }
 
     pegarTodosServicos = () => {
         axios.get(
@@ -55,7 +55,6 @@ export default class TelaDeBusca extends React.Component {
     
 
     render() {
-
 
         const listaDeOfertas = this.state.listaDeServicos.map((oferta) => {
             return <p key={oferta.id}>

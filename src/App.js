@@ -1,7 +1,6 @@
 
 
 import React from 'react'
-import './App.css';
 import axios from "axios";
 import TelaDeCadastro from './components/TelaDeCadastro/TelaDeCadastro';
 import Carrinho from './components/Carrinho/Carrinho';

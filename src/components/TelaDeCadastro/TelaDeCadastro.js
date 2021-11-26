@@ -56,7 +56,8 @@ fazerCadastro=()=>{
       dueDate: "",
       paymentMethods: []
   })
-  }).catch(()=>{
+  }).catch((err)=>{
+    console.log(err.response.data)
     alert('erro ao cadastrar produto')
   })
 };  
@@ -64,6 +65,7 @@ fazerCadastro=()=>{
   render() {
     return (
       <Inputs>
+      <h2 color=''>Cadastrar Serviço</h2>
     <input placeholder={'Produto'}
     value={this.state.title}
     onChange={this.handleTitle}/>
