@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo1 from './img/logo1.png'
-import {Routes, Route, Link} from 'react-router-dom';
-import Home from '../Home/Home';
-import Carrinho from '../Carrinho/Carrinho';
+
 
 const ContainerHeader = styled.div`
 background-color: #DBDB00;
