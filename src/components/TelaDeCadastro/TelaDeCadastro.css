@@ -1,0 +1,35 @@
+
+
+.Inputs{
+ 
+display: grid;
+justify-content: center;
+height: 340px;
+align-items: end;
+justify-items: center;
+align-content: space-around
+}
+.container1{
+    display: flex;
+    padding: 10px;
+    border: 2px solid #7867bf;
+}
+.containerNomePrecoPrazo{
+display: grid;  
+margin-right: 20px; 
+height: 250px;
+width: 250px;
+}
+.containerDescricaoEPagamento{
+    display: grid;
+}
+.button{
+    margin: 0 auto;
+    color: black;
+    background-color: hsl(64, 61%, 91%);
+    font-size: inherit;
+    padding: 0.5em 1em;
+    outline: none;
+    border-radius: 8px 8px;
+    cursor: pointer;
+}
