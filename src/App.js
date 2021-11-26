@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from "axios";
-// import TelaDeBusca from './components/TelaDeBusca'
 import {Filtro} from "./components/Filtro/Filtro";
 import TelaDeCadastro from './components/TelaDeCadastro/TelaCadastro'
  import TelaDeDetalhes from './components/TelaDeDetalhes/TelaDeDetalhes'
@@ -8,7 +7,9 @@ import TelaDeCadastro from './components/TelaDeCadastro/TelaCadastro'
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import TelaDeBusca from './components/TelaDeBusca/TelaDeBusca';
-// import Footer from './components/Footer';
+import Home from './components/Home/Home';
+import TelaDeBusca from './components/TelaDeBusca/TelaDeBusca';
+import Footer from './components/Footer/Footer';
 
 export default class App extends React.Component {
 	state = {
@@ -67,11 +68,26 @@ getJobById = (id) => {
   }
 
     escolheTelaDeCadastro= () => {
+      escolheTela= () => {
         switch (this.state.telaAtual) {
             case "home" :
-                return <Home/>
+                return <div>
+                <Header/>
+                <Home/>
+                <Footer/>
+                </div>
             case "cadastro":
-                return <TelaDeCadastro/>
+                return <div>
+                    <Header/>
+                    <TelaDeCadastro/>
+                    <Footer/>
+                    </div>
+            case "busca":
+                return <div>
+                    <Header/>
+                    <TelaDeBusca/>
+                    <Footer/>
+                </div>       
             default:
                 return <p>Erro! Página não encontrada.</p>    
         }
@@ -80,46 +96,33 @@ getJobById = (id) => {
     mudarParaCadastro = () => {
         this.setState ({telaAtual: "cadastro"})
     }
-	escolheTelaDeBusca= () => {
-        switch (this.state.telaAtual) {
-            case "home" :
-                return <Home/>
-            case "busca":
-                return <TelaDeBusca/>
-            default:
-                return <p>Erro! Página não encontrada.</p>    
-        }
-
-    }
     mudarParaBusca = () => {
         this.setState ({telaAtual: "busca"})
     }
 
 	render () {
 
-        let filterServices = []
- 		const filtrosCriterios = this.state.listService
-		.filter(service => {
+    let filterServices = []
+    const filtrosCriterios = this.state.listService.filter(service => {
  			return service.name.toLowerCase().includes(this.state.search.toLowerCase());
- 		})
- 		.filter(service => {
+ 		}).filter(service => {
  			return this.state.valueMin === "" || service.value >= this.state.valueMin;
- 		})
- 		.filter(service => {
+ 		}).filter(service => {
  			return this.state.valueMax === "" || service.value <= this.state.valueMax;
- 		})
-		.map(service => {
+ 		}).map(service => {
  			return filterServices.push(service);
  		})
-		return (
-			<div>
-                
+		return (            
+			<div>                
 				<Header />
+          <p>O talento certo, no momento certo.</p>
+          <Home mudarParaCadastro={this.mudarParaCadastro} mudarParaBusca={this.mudarParaBusca}/>
+        <Header />
 				<p>O talento certo, no momento certo.</p>
 				<Home mudarParaCadastro={this.mudarParaCadastro} mudarParaBusca={this.mudarParaBusca}/>
-                
-                </div>
-                  
+        <Footer/>
+			</div>
 		)
 	}
 }
+

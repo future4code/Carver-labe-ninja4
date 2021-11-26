@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-// import axios from 'axios';
-import logo1 from '../img/logo1.png'
-
+import logo1 from './img/logo1.png'
 
 const ContainerHeader = styled.div`
 background-color: #DBDB00;
@@ -27,7 +25,7 @@ height:30px;
     background-color: #836FFF;
 }
 `
-export default class App extends Component {
+export default class Header extends Component {
     render() {
         return (
             <ContainerHeader>
