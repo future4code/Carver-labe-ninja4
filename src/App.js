@@ -13,6 +13,8 @@ export default class App extends React.Component {
  		valueMax: "",
     search:"",
     listService: [],
+    carrinho:[],
+		valorTotal:0,
     ordenacao:""
     }
 
@@ -94,7 +96,35 @@ export default class App extends React.Component {
 
     mudarParaBusca = () => {
       this.setState ({telaAtual: "busca"})
-    }
+    };
+
+    //Carrinho
+    removerItemCarrinho=(id)=>{
+		
+      axios.delete(`https://labeninjas.herokuapp.com/jobs/${id}`,{
+        headers:{
+          Authorization:"13dfeab9-2ccf-4951-9acd-0d66de76427d"
+        }
+      }).then((res)=>{
+        alert('item errovido')
+        console.log(res.data)
+      }).catch((err)=>{
+        console.log(err.data)
+      })
+    };
+  
+    adicionarValorTotal = (price) => {
+      this.setState({
+        valorTotal: this.state.valorTotal + price,
+      });
+      };
+    
+      removerValorTotal = (price) => {
+      this.setState({
+        valorTotal: this.state.valorTotal - price,
+      });
+      };
+  
 
 	render () {
     let filterServices = []
@@ -114,6 +144,11 @@ export default class App extends React.Component {
           <p>O talento certo, no momento certo.</p>
           <Home mudarParaCadastro={this.mudarParaCadastro} mudarParaBusca={this.mudarParaBusca}/>
 				<Footer/>
+        <Carrinho
+		carrinho={this.state.carrinho}
+		valorTotal={this.state.valorTotal}
+		removerItemCarrinho={this.removerItemCarrinho}
+		/>
 			</div>
 		)
 	}
