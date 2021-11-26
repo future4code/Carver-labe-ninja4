@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo1 from './img/logo1.png'
 
-
 const ContainerHeader = styled.div`
 background-color: #DBDB00;
 display: flex;

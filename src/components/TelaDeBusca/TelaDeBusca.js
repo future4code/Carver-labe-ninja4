@@ -11,6 +11,13 @@ const AreaPrincipal = styled.div`
     margin: 10px;
 `
 
+//     state = {
+//          listaDeServicos: [],
+//         valueMin: "",
+// 		    valueMax: "",
+// 		    search:""
+//     }
+
 const AreaGrid = styled.div`
     display: flex;
 `

@@ -1,4 +1,6 @@
 import React from 'react';
+import TelaDeCadastro from '../TelaDeCadastro/TelaCadastro';
+// import axios from 'axios';
 import styled from 'styled-components';
 
 const ContainerHome = styled.div`
@@ -12,7 +14,6 @@ border-style: groove;
 padding: 50px;
 
 `
-
 
 export default class Home extends React.Component {
 render() {
