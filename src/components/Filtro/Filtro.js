@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 const AreaFiltro = styled.div`
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
 `
 
 export function Filtro (props) {
@@ -35,7 +34,6 @@ export function Filtro (props) {
                 <option value="maior valor">maior valor</option>
                 <option value="titulo">título</option>
             </select>
-        </div>
     );  
          <h2>{props.listService}</h2>
         </AreaFiltro>

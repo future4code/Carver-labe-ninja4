@@ -1,5 +1,4 @@
 import React from 'react';
-import TelaDeCadastro from '../TelaDeCadastro/TelaCadastro';
 // import axios from 'axios';
 import styled from 'styled-components';
 
