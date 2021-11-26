@@ -31,9 +31,10 @@ export default class Header extends Component {
             <ContainerHeader>
                 <ImgHeader src={logo1} />
                 <div>
-                    <ButtonHeader>Página Inicial</ButtonHeader>
-                    <ButtonHeader>Carrinho</ButtonHeader>
+                    <ButtonHeader onClick={() =>this.props.mudarPagina("home")}>Página Inicial</ButtonHeader>
+                    <ButtonHeader onClick={() =>this.props.mudarPagina("carrinho")}>Carrinho</ButtonHeader>
                 </div>
+                
 
             </ContainerHeader>
         )
