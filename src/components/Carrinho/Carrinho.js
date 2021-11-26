@@ -20,6 +20,7 @@ export default class Carrinho extends Component{
 
         return (<EstiloCarrinho>
             <h2>Carrinho</h2>
+            <br/>
             <div>
                 {itensDoCarrinho}
             </div>
