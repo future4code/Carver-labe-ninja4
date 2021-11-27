@@ -47,7 +47,7 @@ export default class TelaDeBusca extends React.Component {
                 console.log(err)
             })
     }
-    
+
 
 
     render() {
