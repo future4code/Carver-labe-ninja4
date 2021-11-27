@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Itens from './Itens/Intens'
 import { EstiloCarrinho } from './StyledCar'
+import { BotaoFinalizar } from './Botão'; 
 
 
 export default class Carrinho extends Component{
@@ -24,7 +25,7 @@ export default class Carrinho extends Component{
                 {itensDoCarrinho}
             </div>
             <p>Valor Total: R${this.props.valorTotal},00</p>
-            <button>Finalizar Compra</button>
+            <BotaoFinalizar>Finalizar Compra</BotaoFinalizar>
             </EstiloCarrinho>    
             )
         };
