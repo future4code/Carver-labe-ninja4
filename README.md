@@ -12,13 +12,13 @@ Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma Carver.
 
 ## Prints
 - Página Inicial
-![image](https://user-images.githubusercontent.com/91228901/143663576-c2ad5c11-7af2-4aaa-96cf-3c6ebb6d0a1e.png)
+![image](https://user-images.githubusercontent.com/91228901/143663744-8e3167ce-9628-40d9-9186-bc0e32afe832.png)
 
 - Cadastro
-![image](https://user-images.githubusercontent.com/91228901/143663615-6114d864-c2f3-43f1-8f77-fc70c5ec8495.png)
+![image](https://user-images.githubusercontent.com/91228901/143663784-c92136c4-a10d-453e-9667-437e9aacc29f.png)
 
 - Serviços
-![image](https://user-images.githubusercontent.com/91228901/143663634-d2573713-b7d2-44a8-9db5-8786d13483ca.png)
+![image](https://user-images.githubusercontent.com/91228901/143663814-5b05fb8c-26f5-45de-af75-d5ddab562cd8.png)
 
 - Carrinho
-![image](https://user-images.githubusercontent.com/91228901/143663658-ea30a75f-4d31-4b7b-88a0-879668f108e0.png)
+![image](https://user-images.githubusercontent.com/91228901/143663822-d56ab2a0-ed9a-4695-b975-b31f3929986d.png)
