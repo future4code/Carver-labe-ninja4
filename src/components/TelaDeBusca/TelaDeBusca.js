@@ -11,12 +11,12 @@ const AreaPrincipal = styled.div`
     margin: 10px;
 `
 
-//     state = {
-//          listaDeServicos: [],
-//         valueMin: "",
-// 		    valueMax: "",
-// 		    search:""
-//     }
+// state = {
+//     listaDeServicos: [],
+//     valueMin: "",
+//     valueMax: "",
+//     search: ""
+// }
 
 const AreaGrid = styled.div`
     display: flex;
@@ -32,68 +32,69 @@ const CardProduto = styled.div`
 `
 
 export default class TelaDeBusca extends React.Component {
-   
+
 
 
     pegarTodosServicos = () => {
         axios.get(
             `${BASE_URL}/jobs`, {
-                headers: {
-                    Authorization: "13dfeab9-2ccf-4951-9acd-0d66de76427d"
-                }
+            headers: {
+                Authorization: "13dfeab9-2ccf-4951-9acd-0d66de76427d"
             }
-        ).then((response) =>{
+        }
+        ).then((response) => {
             console.log(response)
-            
+
             this.setState({
                 listaDeServicos: response.data.jobs
             })
-        }).catch((error) =>{
+        }).catch((error) => {
             console.log(error.response)
         })
     }
-    
+
 
     render() {
 
 
         const listaDeOfertas = this.state.listaDeServicos.map((oferta) => {
             return <p key={oferta.id}>
-                    <p>{oferta.title}</p>
-                    <p>{oferta.description}</p>
-                    <p>Valor: {oferta.price}</p>
-                    <select>
-                        <option value="">Formas de Pagamento</option>
-                        {oferta.paymentMethods.map((opcao) => {
-                            let i = 0
-                            return (
-                                <option key={opcao.paymentMethods}>{opcao} </option>
-                            )
-                        })}
-                    </select>
-                    <p>Prazo: {moment(oferta.dueDate).format('DD/MM/YYYY')}</p>
-                    <button>Ver Detalhes</button>
-                    <button>Adicionar ao carrinho</button>
-                </p>
+                <p>{oferta.title}</p>
+                <p>{oferta.description}</p>
+                <p>Valor: {oferta.price}</p>
+                <select>
+                    <option value="">Formas de Pagamento</option>
+                    {oferta.paymentMethods.map((opcao) => {
+                        let i = 0
+                        return (
+                            <option key={opcao.paymentMethods}>{opcao} </option>
+                        )
+                    })}
+                </select>
+                <p>Prazo: {moment(oferta.dueDate).format('DD/MM/YYYY')}</p>
+                <button>Ver Detalhes</button>
+                <button>Adicionar ao carrinho</button>
+            </p>
         })
-       
+
         return (
             <AreaPrincipal>
                 <AreaGrid>
                     <Filtro
-                    valueMin={this.state.valueMin}
-                    valueMax={this.state.valueMax}
-                    search={this.state.search}
-                    updateSearch={this.updateSearch}
-                    updateValueMin={this.updateValueMin}
-                    updateValueMax={this.updateValueMax}
+                        valueMin={this.state.valueMin}
+                        valueMax={this.state.valueMax}
+                        search={this.state.search}
+                        updateSearch={this.updateSearch}
+                        updateValueMin={this.updateValueMin}
+                        updateValueMax={this.updateValueMax}
                     />
                     <CardProduto>
-                        {listaDeOfertas}                  
+                        {listaDeOfertas}
                     </CardProduto>
                 </AreaGrid>
-            </AreaPrincipal>         
-        )}
+            </AreaPrincipal>
+        )
+    }
 }
 
 
